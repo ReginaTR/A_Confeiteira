@@ -1,0 +1,11 @@
+<h1>Produtos</h1>
+<%= link_to 'Novo Produto', new_product_path %>
+<ul>
+  <% @products.each do |product| %>
+    <li>
+      <%= link_to product.name, product %>
+      <%= link_to 'Editar', edit_product_path(product) %>
+      <%= link_to 'Excluir', product, method: :delete, data: { confirm: 'Você tem certeza que deseja excluir esse produto?' } %>
+    </li>
+  <% end %>
+</ul>
